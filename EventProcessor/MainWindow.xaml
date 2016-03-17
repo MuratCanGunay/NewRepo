@@ -1,0 +1,38 @@
+﻿<Window x:Class="EventProcessor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventProcessor"
+        mc:Ignorable="d"
+        Title="Event Processor"
+        Height="350"
+        Width="525">
+    <Grid>
+        <ProgressBar x:Name="pbStatus"
+                     HorizontalAlignment="Left"
+                     Height="30"
+                     Margin="40,160,0,0"
+                     VerticalAlignment="Top"
+                     Width="428"
+                     Foreground="Green"
+                     Maximum="400"
+                     Value="{Binding Path=ProgressBarValue, Mode=TwoWay}"></ProgressBar>
+        <Button Content="Yükleme ve Taramayı Başlat"
+                HorizontalAlignment="Left"
+                Margin="40,26,0,0"
+                VerticalAlignment="Top"
+                Width="428"
+                x:Name="btn"
+                Click="Button_Click"
+                Height="57" />
+        <TextBlock x:Name="textBlock"
+                   HorizontalAlignment="Left"
+                   Margin="40,104,0,0"
+                   TextWrapping="Wrap"
+                   Text="{Binding ProducedEvent}"
+                   VerticalAlignment="Top"
+                   Height="30"
+                   Width="428" />
+    </Grid>
+</Window>
